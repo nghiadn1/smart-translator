@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translation & Grammar Analysis System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card" aria-labelledby="app-title">
+      <header class="card-header">
+        <h1 id="app-title">Translation & Grammar Analysis System</h1>
+        <p>Phân tích ngôn ngữ, dịch và điều chỉnh văn phong theo mức độ CEFR.</p>
+      </header>
+
+      <div class="control-bar">
+        <div class="control-group">
+          <label for="sourceLanguage">Source</label>
+          <select id="sourceLanguage" aria-label="Source Language">
+            <option value="auto">Auto</option>
+            <option value="vi">Vietnamese</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+
+        <button id="swapBtn" class="swap-btn" type="button" aria-label="Swap source and target">
+          ⇄
+        </button>
+
+        <div class="control-group">
+          <label for="targetLanguage">Target</label>
+          <select id="targetLanguage" aria-label="Target Language">
+            <option value="vi">Vietnamese</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+
+        <div id="levelWrapper" class="control-group level-wrapper">
+          <label for="cefrLevel">Level (CEFR)</label>
+          <select id="cefrLevel" aria-label="CEFR Level">
+            <option value="A1-A2">A1-A2</option>
+            <option value="B1-B2" selected>B1-B2</option>
+            <option value="C1-C2">C1-C2</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-grid">
+        <div class="pane">
+          <label for="inputText">Input</label>
+          <textarea id="inputText" placeholder="Nhập văn bản..." rows="10"></textarea>
+        </div>
+        <div class="pane">
+          <label for="outputText">Output</label>
+          <textarea id="outputText" rows="10" readonly placeholder="Kết quả sẽ hiển thị ở đây..."></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="translateBtn" type="button" disabled>
+          <span class="btn-text">BẮT ĐẦU PHÂN TÍCH</span>
+          <span class="spinner hidden" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

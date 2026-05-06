@@ -1,0 +1,87 @@
+<!-- Created by Cursor -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Translation & Grammar Analysis System</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <main class="container">
+            <header class="header">
+                <h1>Translation &amp; Grammar Analysis System</h1>
+                <p class="sub">
+                    Vietnamese ↔ English translation with grammar correction and CEFR output level.
+                </p>
+            </header>
+
+            <section class="panel">
+                <div class="row row--langs">
+                    <div class="field">
+                        <label for="sourceLang">Source</label>
+                        <select id="sourceLang">
+                            <option value="auto" selected>Auto</option>
+                            <option value="vi">Vietnamese</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+
+                    <button id="swapBtn" class="swap" type="button" aria-label="Swap languages">
+                        ⇄
+                    </button>
+
+                    <div class="field">
+                        <label for="targetLang">Target</label>
+                        <select id="targetLang">
+                            <option value="vi">Vietnamese</option>
+                            <option value="en" selected>English</option>
+                        </select>
+                    </div>
+
+                    <div class="field level-field" id="levelField">
+                        <label for="level">Level (CEFR)</label>
+                        <select id="level">
+                            <option value="A1-A2">A1–A2</option>
+                            <option value="B1-B2" selected>B1–B2</option>
+                            <option value="C1-C2">C1–C2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row row--textareas">
+                    <div class="field">
+                        <label for="inputText">Input</label>
+                        <textarea
+                            id="inputText"
+                            placeholder="Type Vietnamese or English…"
+                            rows="10"
+                        ></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="outputText">Output</label>
+                        <textarea
+                            id="outputText"
+                            placeholder="Result will appear here…"
+                            rows="10"
+                            readonly
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div class="row row--actions">
+                    <div class="meta">
+                        <span class="badge" id="detectedBadge" hidden></span>
+                        <span class="badge badge--muted" id="modeBadge">Ready</span>
+                    </div>
+                    <button id="submitBtn" class="primary" type="button" disabled>
+                        BẮT ĐẦU PHÂN TÍCH
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <script src="./app.js" defer></script>
+    </body>
+</html>
